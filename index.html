@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Saludo Personalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #mensaje {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Bienvenido!</h1>
+    <p>Escribe tu nombre:</p>
+    <input type="text" id="nombreInput" placeholder="Tu nombre aquí">
+    <button onclick="saludar()">Saludar</button>
+
+    <p id="mensaje"></p>
+
+    <script>
+        function saludar() {
+            const nombre = document.getElementById("nombreInput").value;
+            const mensaje = document.getElementById("mensaje");
+
+            if (nombre.trim() === "") {
+                mensaje.textContent = "Por favor, escribe tu nombre.";
+                mensaje.style.color = "red";
+            } else {
+                mensaje.textContent = `¡Hola, ${nombre}! 👋`;
+                mensaje.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
